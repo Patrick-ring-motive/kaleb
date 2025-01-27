@@ -1,7 +1,6 @@
 setInterval(()=>document.querySelectorAll('iframe,[src*="google"i]').forEach(x=>x.remove()),100);
 setInterval(()=>document.querySelectorAll('a[href*="calebhammer.com"i]').forEach(x=>x.setAttribute('href',x.href.replace(/caleb/gi,y=>y.replace(/c/g,'k').replace(/C/g,'K')))),100);
 setInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="hammer.com"i])').forEach(x=>x.setAttribute('href',x.href.replace(/kaleb/gi,y=>y.replace(/k/g,'c').replace(/K/g,'C')))),100);
-setInterval(()=>document.querySelectorAll('a[href*="://om3nl2oo8sp.typeform.com"i]').forEach(x=>x.setAttribute('href','https://form.kalebhammer.com/to/Bke4O2Wn?utm_source=Website&typeform-source=om3nl2oo8sp.typeform.com')),100);
 
  (()=>{
         const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
