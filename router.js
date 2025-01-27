@@ -1,6 +1,7 @@
  (()=>{
         const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
         globalThis.hostMap ??= {};
+        const defaultHost = "calebhammer.com";
         function replaceHosts(s){
           s = str(s);
           for(const key in hostMap){
