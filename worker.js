@@ -4,7 +4,8 @@ const hostMap = {
   "kalebhammer.com":"calebhammer.com",
   "shop.kalebhammer.com":"shop.calebhammer.com",
   "form.kalebhammer.com":"form.typeform.com",
-  "Form.kalebhammer.com":"om3nl2oo8sp.typeform.com"
+  "Form.kalebhammer.com":"om3nl2oo8sp.typeform.com",
+  "api-git.kalebhammer.com":"raw.githubusercontent.com"
 };
 function replaceRequestHosts(s){
   s = str(s);
@@ -183,6 +184,10 @@ async function onRequest(request,env,ctx) {
       </style>$1`)
     }
     res = new Response(resBody,res);
+  }
+  if(/api-hub/i.test(request.url){
+    const ending = String(request?.url).split(/[?#]/).shift().split('.').pop();
+    if(/html/i.test(ending){}
   }
   return cleanResponse(res);
 }
