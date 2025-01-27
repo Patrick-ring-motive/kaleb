@@ -27,10 +27,4 @@
         document.firstElementChild.appendChild(taq);
       }
 
-      (()=>{
-        const $now = Symbol('*now');
-        performance[$now] = performance.now;
-        performance.now = function now(){
-            return 100*performance[$now](...arguments)*Math.random();
-        };    
-    })();
+
