@@ -123,20 +123,7 @@ async function onRequest(request,env,ctx) {
         })();
       })();
       </script>
-      <style>
-        [taco-rain]{
-          filter:sepia(0.75) saturate(2);
-        }
-        [taco-rain]:hover{display:none;}
-        .dialog-widget-content,
-        .dialog-message{
-          min-width:100vw;
-          max-height:75vh;
-        }
-        body{
-          filter:hue-rotate(45deg) saturate(2) contrast(1.1);
-        }
-      </style>$1`)
+      <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css"></link>$1`)
     }
     res = new Response(resBody,res);
   }
