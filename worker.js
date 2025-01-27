@@ -51,12 +51,14 @@ async function onRequest(request,env,ctx) {
       resBody = resBody.replace(/(\d+) Hammer Media/,'$1 Not Hammer Media')
       .replace('Extraordinary Brands','MissingLink')
       .replace('extraordinarybrands.io','patrickring.net');
-      resBody = resBody.replace(/(<\/head>)/i,`<script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js"></script>
+      resBody = resBody.replace(/(<\/head>)/i,`<script>
+      globalThis.hostMap = ${JSON.stringify(hostMap)};
+      </script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js"></script>
       <script>
       (()=>{
         const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
-        const hostMap = ${JSON.stringify(hostMap)};
-        const defaultHost = "${url.hostname}";
+        globalThis.hostMap ??= {};
         function replaceHosts(s){
           s = str(s);
           for(const key in hostMap){
