@@ -26,7 +26,7 @@ function replaceResponseHosts(s){
 const defaultHost = "calebhammer.com";
 async function onRequest(request,env,ctx) {
   const url = new URL(request.url);
-  url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
+  if(!/api-git/i.test(request.url))url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
   const hostProxy = url.hostname;
   url.hostname = hostMap[url.hostname] ??= defaultHost;
   const modifiedRequest = new Request(url, Object.defineProperty(request,'headers',{
