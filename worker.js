@@ -185,7 +185,7 @@ async function onRequest(request,env,ctx) {
     }
     res = new Response(resBody,res);
   }
-  if(/api-git/i.test(request.url){
+  if(/api-git/i.test(request.url)){
     const ending = String(request?.url).split(/[?#]/).shift().split('.').pop();
     if(/html/i.test(ending)){
       res.headers.set('content-type','text/html; charset=utf-8');
