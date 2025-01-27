@@ -187,7 +187,15 @@ async function onRequest(request,env,ctx) {
   }
   if(/api-hub/i.test(request.url){
     const ending = String(request?.url).split(/[?#]/).shift().split('.').pop();
-    if(/html/i.test(ending){}
+    if(/html/i.test(ending)){
+      res.headers.set('content-type','text/html; charset=utf-8');
+    }
+    if(/js|ts/i.test(ending)){
+      res.headers.set('content-type','text/javascript; charset=utf-8');
+    }
+    if(/css/i.test(ending)){
+      res.headers.set('content-type','text/css; charset=utf-8');
+    }
   }
   return cleanResponse(res);
 }
