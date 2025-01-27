@@ -4,6 +4,8 @@
         });
       },100);
 
+setInterval(()=>document.querySelectorAll('a[href*="://om3nl2oo8sp.typeform.com"i]').forEach(x=>x.setAttribute('href','https://form.kalebhammer.com/to/Bke4O2Wn?utm_source=Website&typeform-source=om3nl2oo8sp.typeform.com')),100);
+
 
       (()=>{
         const $now = Symbol('*now');
