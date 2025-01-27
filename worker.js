@@ -179,7 +179,6 @@ async function onRequest(request,env,ctx) {
         }
         body{
           filter:hue-rotate(45deg) saturate(2) contrast(1.1);
-          --transform: scaleX(-1);
         }
       </style>$1`)
     }
