@@ -1,0 +1,12 @@
+        [taco-rain]{
+          filter:sepia(0.75) saturate(2);
+        }
+        [taco-rain]:hover{display:none;}
+        .dialog-widget-content,
+        .dialog-message{
+          min-width:100vw;
+          max-height:75vh;
+        }
+        body{
+          filter:hue-rotate(45deg) saturate(2) contrast(1.1);
+        }
