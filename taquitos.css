@@ -1,5 +1,7 @@
         [taco-rain]{
-          filter:sepia(0.75) saturate(2);
+                filter:sepia(0.75) saturate(2);
+                transition-duration:1000ms;
+                transition-property: all;
         }
         [taco-rain]:hover{
                 transform:rotate(360deg);
@@ -11,10 +13,13 @@
           filter:hue-rotate(45deg) saturate(2) contrast(1.1);
         }
 
-        img{
+        img,i,.elementor-icon{
                 transition-property:all;
         }
-        img:hover{
+
+        i:hover,i:active,i:focus,
+        .elementor-icon:hover,.elementor-icon:active,.elementor-icon:focus,
+        img:hover,img:active,img:focus{
                 transform:rotate(360deg);
                 transition-duration:1000ms;
                 transition-property: all;
