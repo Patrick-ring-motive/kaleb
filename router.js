@@ -28,10 +28,11 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
               request = new Request(replaceHosts(request.url),request);
               response = await _fetch.call(this, request);
             }catch(e){
-              ressponse = new Response(e, {
+              response = new Response(e, {
                 status: 569,
                 statusText: e.message
               });
+              console.warn(this,e,...arguments,request,response);
             }
             response['&arguments'] = arguments;
             response['&request'] = request;
@@ -45,7 +46,11 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
           XMLHttpRequest.prototype.open = Object.setPrototypeOf(function open(){
             arguments[1] = replaceHosts(arguments[1]);
             this['&open.arguments'] = arguments;
-            return _open.apply(this,arguments);
+            try{
+              return _open.apply(this,arguments);
+            }catch(e){
+              console.warn(this,e,...arguments);
+            }
           },_open);
         })();
         (()=>{
@@ -54,7 +59,11 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
           XMLHttpRequest.prototype[$send] = _send;
           XMLHttpRequest.prototype.send = Object.setPrototypeOf(function send(payload){
             this['&send.arguments'] = arguments;
-            return _send.apply(this,arguments);
+            try{
+              return _send.apply(this,arguments);
+            }catch(e){
+              console.warn(this,e,...arguments);
+            }
           },_send);
         })();
         (()=>{
