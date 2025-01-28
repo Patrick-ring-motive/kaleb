@@ -1,7 +1,9 @@
         [taco-rain]{
           filter:sepia(0.75) saturate(2);
         }
-        [taco-rain]:hover{display:none;}
+        [taco-rain]:hover{
+                transform:rotate(360deg);
+        }
 
         body{
           filter:hue-rotate(45deg) saturate(2) contrast(1.1);
