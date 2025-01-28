@@ -1,4 +1,26 @@
-  globalThis.queueMicrotask ??= setTimeout;
+globalThis. Q = fn =>{
+    try{
+	  return fn();
+    }catch{
+	  return undefined;
+    }
+};
+globalThis. newQ = (...args) => {
+ const fn = args?.shift?.();
+ return fn && new fn(...args);
+};
+globalThis.debounceInterval = function debounceInterval(fn,time){
+    let lastTime = new Date().getTime();
+    return setInterval(()=>{
+	  const currentTime = new Date().getTime();
+	  if((1.5 * (currentTime - lastTime)) >= time){
+		lastTime = currentTime;
+		return fn();
+	  }
+    },time);
+}
+        
+ globalThis.queueMicrotask ??= setTimeout;
 	globalThis.requestAnimationFrame ??= setTimeout;
 	globalThis.requestIdleCallback ??= globalThis.requestAnimationFrame;
 	globalThis.nextIdle=function nextIdle(){
