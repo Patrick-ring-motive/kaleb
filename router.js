@@ -1,7 +1,5 @@
 
-(async()=>{
-globalThis.DOMComplete ??= (import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`));
-globalThis.DOMComplete instanceof Promise ?? (await globalThis.DOMComplete);   
+(()=>{
 debounceInterval(()=>document.querySelectorAll('iframe,[src*="google"i]').forEach(x=>x.remove()),100);
 debounceInterval(()=>document.querySelectorAll('a[href*="calebhammer.com"i]').forEach(x=>x.setAttribute('href',x.href.replace(/caleb/gi,y=>y.replace(/c/g,'k').replace(/C/g,'K')))),100);
 debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="hammer.com"i])').forEach(x=>x.setAttribute('href',x.href.replace(/kaleb/gi,y=>y.replace(/k/g,'c').replace(/K/g,'C')))),100);
