@@ -1,4 +1,15 @@
 (async()=>{
+      const Q = fn =>{
+            try{
+                  return fn();
+            }catch{
+                  return undefined;
+            }
+      };
+      const newQ = (...args) => {
+         const fn = args?.shift?.();
+         return fn && new fn(...args);
+      };
       function debounceInterval(fn,time){
             let lastTime = new Date().getTime();
             return setInterval(()=>{
@@ -38,7 +49,7 @@
         },1000);
         document.firstElementChild.appendChild(taq);
       }
-      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}`);
+      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`);
       await DOMInteractive();
       (()=>{
             const style = document.createElement('style');
