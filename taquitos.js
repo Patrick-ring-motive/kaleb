@@ -39,4 +39,23 @@
         document.firstElementChild.appendChild(taq);
       }
       await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}`);
+      await DOMInteractive();
+      (()=>{
+            const style = document.createElement('style');
+            style.innerHTML = `${[...document.styleSheets].map(x=>{
+            	try{
+            		return[...x.rules];
+            	}catch{
+            		return[];
+            	}
+            }).flat()
+            .filter(x=>String(x.cssText)
+            .includes('background-image')&&String(x.cssText)
+            .includes('linear-gradient'))
+            .map(x=>x.selectorText.replaceAll('::before',' '))
+            .join(', ')}{
+            	filter:drop-shadow(0 0 0.75rem grey);
+            }`;
+            document.firstElementChild.appendChild(style);
+      })();
 })();
