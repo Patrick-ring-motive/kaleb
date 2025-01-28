@@ -1,4 +1,15 @@
-
+(()=>{
+      function debounceInterval(fn,time){
+            let lastTime = new Date().getTime();
+            return setInterval(()=>{
+                  const currentTime = new Date().getTime();
+                  if((currentTime - lastTime) >= time){
+                        lastTime = currentTime;
+                        return fn();
+                  }
+            },time);
+      }
+      
       for(const _ of Array(5)){
         const taq = document.createElement('span');
         taq.innerText = '🌯';
@@ -10,7 +21,7 @@
         taq.style.transform = Math.random() > 0.5 ? 'scaleX(1)' : 'scaleX(-1)';
         taq.style.transitionDuration = '1000ms';
         taq.style.transitionTimingFunction = 'linear';
-        taq.interval = setInterval(()=>{
+        taq.interval = debounceInterval(()=>{
             taq.style.visibility = 'visible';
             const nextTop = parseFloat(taq.style.top)+10;
             taq.style.transitionDuration = '1000ms';
@@ -26,5 +37,4 @@
         },1000);
         document.firstElementChild.appendChild(taq);
       }
-
-
+})();
