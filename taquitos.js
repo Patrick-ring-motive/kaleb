@@ -3,7 +3,7 @@
             let lastTime = new Date().getTime();
             return setInterval(()=>{
                   const currentTime = new Date().getTime();
-                  if((currentTime - lastTime) >= time){
+                  if((1.5 * (currentTime - lastTime)) >= time){
                         lastTime = currentTime;
                         return fn();
                   }
