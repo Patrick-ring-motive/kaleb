@@ -53,10 +53,15 @@
       	if(r === '0px')x.style.borderRadius = '1vmin';
       });
       await DOMComplete();
-      ['mouseover','mouseenter','pointerover','pointerenter','touchstart','focus'].forEach(eventType=>
-            document.querySelectorAll('img,i,.elmentor-icon').forEach(x=>x.addEventListener(eventType, (event) => {
-            	const element = event.target;
-            	element?.setAttribute?.('hovered',true);
-            	setTimeout(()=>element?.removeAttribute?.('hovered'),1000);
-      })));
+      function trySpinningThatsAGoodTrick(){
+            ['mouseover','mouseenter','pointerover','pointerenter','touchstart','focus'].forEach(eventType=>
+                  document.querySelectorAll('img:not([spinny]),i:not([spinny]),.elmentor-icon:not([spinny])').forEach(x=>x.addEventListener(eventType, (event) => {
+                  	const element = event.target;
+                  	element?.setAttribute?.('hovered',true);
+                        element?.setAttribute?.('spinny',true);
+                  	setTimeout(()=>element?.removeAttribute?.('hovered'),1000);
+            })));
+      }
+      trySpinningThatsAGoodTrick();
+      debounceInterval(trySpinningThatsAGoodTrick,100);
 })();
