@@ -60,7 +60,7 @@
                         if(element?.hasAttribute?.('hovered'))return;
                   	element?.setAttribute?.('hovered',true);
                         element?.setAttribute?.('spinny',true);
-                  	setTimeout(()=>element?.removeAttribute?.('hovered'),1000);
+                  	setTimeout(()=>element?.removeAttribute?.('hovered'),10000);
             })));
       }
       trySpinningThatsAGoodTrick();
