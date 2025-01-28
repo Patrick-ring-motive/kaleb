@@ -47,4 +47,9 @@
             }`;
             document.firstElementChild.appendChild(style);
       })();
+      document.querySelectorAll('img').forEach(x=>{
+      	const s = getComputedStyle(x);
+      	const r = s.getPropertyValue('border-radius');
+      	if(r === '0px')x.style.borderRadius = '1vmin';
+      });
 })();
