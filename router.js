@@ -5,6 +5,9 @@ debounceInterval(()=>document.querySelectorAll('a[href*="calebhammer.com"i]').fo
 debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="hammer.com"i])').forEach(x=>x.setAttribute('href',x.href.replace(/kaleb/gi,y=>y.replace(/k/g,'c').replace(/K/g,'C')))),100);
 })();
  (()=>{
+        const decoder = new TextDecoder();
+        const decode = x => decoder.decode;
+        const gunzip = pako.ungzip;
         const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
         globalThis.hostMap ??= {};
         const defaultHost = "calebhammer.com";
@@ -61,6 +64,8 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
             const encoding = String([...(this['&headers']?.entries()??[])].find(x=>/Content-Encoding/i.test(x)));
             if(/gzip/i.test(encoding){
               console.warn(payload);
+              console.warn(gunzip(payload));
+             console.warn(decode(gunzip(payload)));
             }
             this['&send.arguments'] = arguments;
             try{
