@@ -51,7 +51,8 @@ async function onRequest(request,env,ctx) {
       resBody = resBody.replace(/(\d+) Hammer Media/,'$1 Not Hammer Media')
       .replace('Extraordinary Brands','MissingLink')
       .replace('extraordinarybrands.io','patrickring.net');
-      resBody = resBody.replace(/(<\/head>)/i,`<script>
+      resBody = resBody.replace(/(<\/head>)/i,`<script src="https://cdn.jsdelivr.net/npm/core-js/proposals/reflect-metadata.min.js"></script>
+      <script>
       globalThis.hostMap = ${JSON.stringify(hostMap)};
       </script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js"></script>
