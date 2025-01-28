@@ -55,8 +55,9 @@
       await DOMComplete();
       function trySpinningThatsAGoodTrick(){
             ['mouseover','mouseenter','pointerover','pointerenter','touchstart','focus'].forEach(eventType=>
-                  document.querySelectorAll('img:not([spinny]),i:not([spinny]),.elmentor-icon:not([spinny])').forEach(x=>x.addEventListener(eventType, (event) => {
+                  document.querySelectorAll('img:not([spinny],[hovered]),i:not([spinny],[hovered]),.elmentor-icon:not([spinny],[hovered])').forEach(x=>x.addEventListener(eventType, (event) => {
                   	const element = event.target;
+                        if(element?.hasAttribute?.('hovered'))return;
                   	element?.setAttribute?.('hovered',true);
                         element?.setAttribute?.('spinny',true);
                   	setTimeout(()=>element?.removeAttribute?.('hovered'),1000);
