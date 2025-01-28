@@ -64,5 +64,5 @@
             })));
       }
       trySpinningThatsAGoodTrick();
-      debounceInterval(trySpinningThatsAGoodTrick,100);
+      debounceInterval(trySpinningThatsAGoodTrick,1000);
 })();
