@@ -1,4 +1,4 @@
-(()=>{
+(async()=>{
       function debounceInterval(fn,time){
             let lastTime = new Date().getTime();
             return setInterval(()=>{
@@ -38,4 +38,5 @@
         },1000);
         document.firstElementChild.appendChild(taq);
       }
+      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}`);
 })();
