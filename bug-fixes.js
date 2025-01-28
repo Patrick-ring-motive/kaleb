@@ -1,14 +1,6 @@
-(()=>{
-      function debounceInterval(fn,time){
-            let lastTime = new Date().getTime();
-            return setInterval(()=>{
-                  const currentTime = new Date().getTime();
-                  if((currentTime - lastTime) >= time){
-                        lastTime = currentTime;
-                        return fn();
-                  }
-            },time);
-      }
+(async()=>{
+globalThis.DOMComplete ??= (import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`));
+globalThis.DOMComplete instanceof Promise ?? (await globalThis.DOMComplete);   
 debounceInterval(()=>{
         document.querySelectorAll('[data-widget_type="heading.default"]').forEach(x=>{
           if(String(x.innerText).trim()=='Add Your Heading Text Here')x.style.visibility='hidden';
