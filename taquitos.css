@@ -17,6 +17,9 @@
                 transition-property:all;
         }
 
+        img{
+                filter:drop-shadow(0 0 0.75rem grey);
+        }
         i:hover,i:active,i:focus,
         .elementor-icon:hover,.elementor-icon:active,.elementor-icon:focus,
         img:hover,img:active,img:focus{
