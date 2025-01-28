@@ -4,7 +4,7 @@
         [taco-rain]:hover{
                 transform:rotate(360deg);
                 transition-duration:1000ms;
-                transition-property: transform;
+                transition-property: all;
         }
 
         body{
