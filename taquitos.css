@@ -10,3 +10,12 @@
         body{
           filter:hue-rotate(45deg) saturate(2) contrast(1.1);
         }
+
+        img{
+                transition-property:all;
+        }
+        img:hover{
+                transform:rotate(360deg);
+                transition-duration:1000ms;
+                transition-property: all;
+        }
