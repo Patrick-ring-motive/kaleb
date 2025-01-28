@@ -1,6 +1,4 @@
 (async()=>{
-      globalThis.DOMComplete ??= (import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`));
-      globalThis.DOMComplete instanceof Promise ?? (await globalThis.DOMComplete);   
       for(const _ of Array(5)){
         const taq = document.createElement('span');
         taq.innerText = '🌯';
