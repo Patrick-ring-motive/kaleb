@@ -56,6 +56,7 @@ async function onRequest(request,env,ctx) {
       <script>
       globalThis.hostMap = ${JSON.stringify(hostMap)};
       </script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/router.js?${url?.searchParams?.get?.('cache')}"></script>
