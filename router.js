@@ -58,6 +58,9 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
           const _send = XMLHttpRequest.prototype.send;
           XMLHttpRequest.prototype[$send] = _send;
           XMLHttpRequest.prototype.send = Object.setPrototypeOf(function send(payload){
+            if([...(this['&headers']?.keys()??[])].some(x=>/Content-Encoding/i.test(x))){
+             console.warn([...(this['&headers']?.entries()??[])].find(x=>/Content-Encoding/i.test(x?.[1])));
+            }
             this['&send.arguments'] = arguments;
             try{
               return _send.apply(this,arguments);
