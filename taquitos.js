@@ -52,6 +52,7 @@
       	const r = s.getPropertyValue('border-radius');
       	if(r === '0px')x.style.borderRadius = '1vmin';
       });
+      await DOMComplete();
       ['mouseover','mouseenter','pointerover','pointerenter','touchstart','focus'].forEach(eventType=>
             document.querySelectorAll('img,i,.elmentor-icon').forEach(x=>x.addEventListener(eventType, (event) => {
             	const element = event.target;
