@@ -49,7 +49,7 @@
         },1000);
         document.firstElementChild.appendChild(taq);
       }
-      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`);
+      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`);
       await DOMInteractive();
       (()=>{
             const style = document.createElement('style');
