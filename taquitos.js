@@ -60,7 +60,7 @@
                         i:not([spinny],[hovered]),
                         .elmentor-icon:not([spinny],[hovered])`
                   ).forEach(x=>x.addEventListener(eventType, (event) => {
-                        if(document.body.hasAttribute('hovering')return;
+                        if(document.body.hasAttribute('hovering'))return;
                   	const element = event.target;
                         if(element?.hasAttribute?.('hovered'))return;
                         document.body.setAttribute('hovering',true);
