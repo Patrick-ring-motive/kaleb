@@ -55,8 +55,9 @@ async function onRequest(request,env,ctx) {
       .replace('extraordinarybrands.io','patrickring.net');
       resBody = resBody.replace(/(<\/head>)/i,`<script src="https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js"></script>
       <script>
-      globalThis.hostMap = ${JSON.stringify(hostMap)};
+        globalThis.hostMap = ${JSON.stringify(hostMap)};
       </script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
