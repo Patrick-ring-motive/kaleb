@@ -62,7 +62,7 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
           XMLHttpRequest.prototype[$send] = _send;
           XMLHttpRequest.prototype.send = Object.setPrototypeOf(function send(payload){
             const encoding = String([...(this['&headers']?.entries()??[])].find(x=>/Content-Encoding/i.test(x)));
-            if(/gzip/i.test(encoding){
+            if(/gzip/i.test(encoding)){
               console.warn(payload);
               console.warn(gunzip(payload));
              console.warn(decode(gunzip(payload)));
