@@ -41,7 +41,7 @@
             .filter(x=>String(x.cssText)
             .includes('background-image')&&String(x.cssText)
             .includes('linear-gradient'))
-            .map(x=>x.selectorText.replaceAll('::before',' '))
+            .map(x=>String(x?.selectorText).replaceAll?.('::before',' '))
             .join(', ')}{
             	filter:drop-shadow(0 0 0.75rem grey);
             }`;
