@@ -52,6 +52,7 @@ async function onRequest(request,env,ctx) {
       .replace('Extraordinary Brands','MissingLink')
       .replace('extraordinarybrands.io','patrickring.net');
       resBody = resBody.replace(/(<\/head>)/i,`<script src="https://cdn.jsdelivr.net/npm/core-js/proposals/reflect-metadata.min.js"></script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js"></script>
       <script>
       globalThis.hostMap = ${JSON.stringify(hostMap)};
       </script>
