@@ -1,26 +1,5 @@
 (async()=>{
-      const Q = fn =>{
-            try{
-                  return fn();
-            }catch{
-                  return undefined;
-            }
-      };
-      const newQ = (...args) => {
-         const fn = args?.shift?.();
-         return fn && new fn(...args);
-      };
-      function debounceInterval(fn,time){
-            let lastTime = new Date().getTime();
-            return setInterval(()=>{
-                  const currentTime = new Date().getTime();
-                  if((1.5 * (currentTime - lastTime)) >= time){
-                        lastTime = currentTime;
-                        return fn();
-                  }
-            },time);
-      }
-      
+      globalThis.DOMComplete ?? (await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`));
       for(const _ of Array(5)){
         const taq = document.createElement('span');
         taq.innerText = '🌯';
@@ -49,7 +28,7 @@
         },1000);
         document.firstElementChild.appendChild(taq);
       }
-      await import(`https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${Q(()=>newQ(URL,location?.href))?.searchParams?.get?.('cache')}`);
+      
       await DOMInteractive();
       (()=>{
             const style = document.createElement('style');
