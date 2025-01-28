@@ -20,7 +20,7 @@
         taq.style.zIndex = 99999;
         taq.style.transform = Math.random() > 0.5 ? 'scaleX(1)' : 'scaleX(-1)';
         taq.style.transitionDuration = '1000ms';
-        taq.style.transitionProperty = all;
+        taq.style.transitionProperty = 'all';
         taq.style.transitionTimingFunction = 'linear';
         taq.interval = debounceInterval(()=>{
             taq.style.visibility = 'visible';
