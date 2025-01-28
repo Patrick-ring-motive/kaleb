@@ -17,13 +17,13 @@
                 transition-property:all;
         }
 
-        img{
+        img,button{
                 filter:drop-shadow(0 0 0.75rem grey);
         }
         i:hover,i:active,i:focus,
         .elementor-icon:hover,.elementor-icon:active,.elementor-icon:focus,
         img:hover,img:active,img:focus{
-                transform:rotate(360deg);
-                transition-duration:1000ms;
-                transition-property: all;
+                transform:rotate(360deg) !important;
+                transition-duration:1000ms !important;
+                transition-property: all !important;
         }
