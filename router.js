@@ -1,7 +1,19 @@
-setInterval(()=>document.querySelectorAll('iframe,[src*="google"i]').forEach(x=>x.remove()),100);
-setInterval(()=>document.querySelectorAll('a[href*="calebhammer.com"i]').forEach(x=>x.setAttribute('href',x.href.replace(/caleb/gi,y=>y.replace(/c/g,'k').replace(/C/g,'K')))),100);
-setInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="hammer.com"i])').forEach(x=>x.setAttribute('href',x.href.replace(/kaleb/gi,y=>y.replace(/k/g,'c').replace(/K/g,'C')))),100);
 
+(()=>{
+      function debounceInterval(fn,time){
+            let lastTime = new Date().getTime();
+            return setInterval(()=>{
+                  const currentTime = new Date().getTime();
+                  if((currentTime - lastTime) >= time){
+                        lastTime = currentTime;
+                        return fn();
+                  }
+            },time);
+      }
+debounceInterval(()=>document.querySelectorAll('iframe,[src*="google"i]').forEach(x=>x.remove()),100);
+debounceInterval(()=>document.querySelectorAll('a[href*="calebhammer.com"i]').forEach(x=>x.setAttribute('href',x.href.replace(/caleb/gi,y=>y.replace(/c/g,'k').replace(/C/g,'K')))),100);
+debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="hammer.com"i])').forEach(x=>x.setAttribute('href',x.href.replace(/kaleb/gi,y=>y.replace(/k/g,'c').replace(/K/g,'C')))),100);
+})();
  (()=>{
         const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
         globalThis.hostMap ??= {};
