@@ -5,7 +5,8 @@ const hostMap = {
   "shop.kalebhammer.com":"shop.calebhammer.com",
   "form.kalebhammer.com":"form.typeform.com",
   "Form.kalebhammer.com":"om3nl2oo8sp.typeform.com",
-  "api-git.kalebhammer.com":"raw.githubusercontent.com"
+  "api-git.kalebhammer.com":"raw.githubusercontent.com",
+  "youtube.kalebhammer.com":"www.youtube.com"
 };
 function replaceRequestHosts(s){
   s = str(s);
