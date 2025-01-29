@@ -8,8 +8,8 @@ const hostMap = {
   "youtube.kalebhammer.com":"www.youtube.com",
   "play.kalebhammer.com":"play.google.com"
 };
-async function fetchText(url,options){
-  return await(await fetch(url,options)).text();
+async function fetchText(){
+  return await(await fetch(...Array.from(arguments))).text();
 }
 function replaceRequestHosts(s){
   s = str(s);
