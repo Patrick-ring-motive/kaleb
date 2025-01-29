@@ -1,6 +1,10 @@
 (()=>{
   self.hostMap ??= {};
-  self?.ServiceWorkerGlobalScope?.importScripts?.('https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js');
+  self?.ServiceWorkerGlobalScope?.importScripts?.(
+    `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}`,
+    `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`,
+    'https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js'
+  );
 
   const decoder = new TextDecoder();
   const decode = x => decoder.decode;
