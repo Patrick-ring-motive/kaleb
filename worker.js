@@ -9,7 +9,7 @@ const hostMap = {
   "play.kalebhammer.com":"play.google.com"
 };
 async function fetchText(){
-  return await(await fetch(...arguments).text());
+  return await(await fetch(...arguments)).text();
 }
 function replaceRequestHosts(s){
   s = str(s);
