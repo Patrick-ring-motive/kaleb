@@ -47,6 +47,7 @@ async function onRequest(request,env,ctx) {
   });
   if(/html|script/i.test(res.headers.get('content-type'))){
     let resBody = await res.text();
+    resBody = resBody.replace(/content=["]\/[^"]*["]/gi,x=>`content="${url.origin}${x.split('"')[1]}"`);
     resBody = resBody.replace(/caleb/gi,x=>x.replace(/c/g,'k').replace(/C/g,'K'));
     resBody = resBody.replaceAll('upport@kalebhammer.com','upport@calebhammer.com');
     if(/html/i.test(res.headers.get('content-type'))){
