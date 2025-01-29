@@ -26,7 +26,7 @@
         }
 
         [hovered],
-        .card-wrapper:hover,.card-wrapper:active,.card-wrapper:focus,
+        .card-wrapper:not(:has([hovered])):hover,.card-wrapper:not(:has([hovered])):active,.card-wrapper:not(:has([hovered])):focus,
         iframe:hover,iframe:active,iframe:focus,
         canvas:hover,canvas:active,canvas:focus,
         svg:hover,svg:active,svg:focus,
