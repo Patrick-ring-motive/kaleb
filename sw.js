@@ -13,11 +13,11 @@
 
   self?.navigator?.serviceWorker?.register?.(document?.currentScript?.src);
 
-  self.addEventListener('install',async (event) => event?.waitUntil?.(self?.skipWaiting?.()));
+  self?.addEventListener?.('install',async (event) => event?.waitUntil?.(self?.skipWaiting?.()));
 
-  self.addEventListener("activate", event => event?.waitUntil?.(clients?.claim?.()));
+  self?.addEventListener?.("activate", event => event?.waitUntil?.(clients?.claim?.()));
 
-  self.addEventListener('fetch', function onRequest(event){
+  self?.addEventListener?.('fetch', function onRequest(event){
          return event.respondWith(awaitUntil(event,event.request));
   });
 
