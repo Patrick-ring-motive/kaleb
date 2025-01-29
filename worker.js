@@ -1,4 +1,4 @@
-
+//href="https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png"
 const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
 const hostMap = {
   "kalebhammer.com":"calebhammer.com",
