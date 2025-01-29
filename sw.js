@@ -1,9 +1,9 @@
 (()=>{
   self.hostMap ??= {};
-  self?.ServiceWorkerGlobalScope?.importScripts?.(
+ /* self?.ServiceWorkerGlobalScope?.importScripts?.(
     `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}`,
     `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`
-  );
+  );*/
 
   const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
   const defaultHost = "calebhammer.com";
