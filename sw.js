@@ -2,13 +2,9 @@
   self.hostMap ??= {};
   self?.ServiceWorkerGlobalScope?.importScripts?.(
     `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}`,
-    `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`,
-    'https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js'
+    `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`
   );
 
-  const decoder = new TextDecoder();
-  const decode = x => decoder.decode;
-  const gunzip = self?.pako?.ungzip;
   const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
   const defaultHost = "calebhammer.com";
   function replaceHosts(s){
