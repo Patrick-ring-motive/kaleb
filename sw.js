@@ -8,7 +8,7 @@
 
   const decoder = new TextDecoder();
   const decode = x => decoder.decode;
-  const gunzip = pako.ungzip;
+  const gunzip = self?.pako?.ungzip;
   const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
   const defaultHost = "calebhammer.com";
   function replaceHosts(s){
