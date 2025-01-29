@@ -8,6 +8,9 @@ const hostMap = {
   "youtube.kalebhammer.com":"www.youtube.com",
   "play.kalebhammer.com":"play.google.com"
 };
+async function fetchText(){
+  return await(await fetch(...arguments).text());
+}
 function replaceRequestHosts(s){
   s = str(s);
   for(const key in hostMap){
@@ -27,6 +30,13 @@ function replaceResponseHosts(s){
 const defaultHost = "calebhammer.com";
 async function onRequest(request,env,ctx) {
   if(/favicon/i.test(request.url))return fetch("https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png");
+  if(/sw\.js/i.test(request.url)){
+    return new Response(
+      `self.hostMap = ${JSON.stringify(hostMap)};
+      ${await fetchText(`https://raw.githubusercontent.com/Patrick-ring-motive/kaleb/refs/heads/main/sw.js?${new Date().getTime()}`)}`,
+      {headers:{'Content-Type':'text/javascript'}}
+    );
+  }
   const url = new URL(request.url);
   if(!/api-git/i.test(request.url))url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
   const hostProxy = url.hostname;
@@ -64,6 +74,7 @@ async function onRequest(request,env,ctx) {
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/router.js?${url?.searchParams?.get?.('cache')}"></script>
+      <script src="/sw.js?${url?.searchParams?.get?.('cache')}"></script>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.css?${url?.searchParams?.get?.('cache')}"></link>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css?${url?.searchParams?.get?.('cache')}"></link>
       <link rel="icon" type="image/png" href="https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png"></link>$1`)
