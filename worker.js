@@ -77,7 +77,7 @@ async function onRequest(request,env,ctx) {
       <script src="/sw.js?${url?.searchParams?.get?.('cache')}"></script>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.css?${url?.searchParams?.get?.('cache')}"></link>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css?${url?.searchParams?.get?.('cache')}"></link>
-      <link rel="icon" type="image/png" href="https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png"></link>$1`)
+      <link rel="icon" type="image/png" href="${url.origin}/favicon.png"></link>$1`)
     }
     res = new Response(resBody,res);
   }
