@@ -13,7 +13,7 @@
           filter:hue-rotate(45deg) saturate(2) contrast(1.1);
         }
 
-        iframe,svg,canvas,img,i,.elementor-icon{
+        iframe,svg,canvas,img,i,.elementor-icon,.card-wrapper{
                 transition-property:all;
         }
 
@@ -26,6 +26,7 @@
         }
 
         [hovered],
+        .card-wrapper:hover,.card-wrapper:active,.card-wrapper:focus,
         iframe:hover,iframe:active,iframe:focus,
         canvas:hover,canvas:active,canvas:focus,
         svg:hover,svg:active,svg:focus,
