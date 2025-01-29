@@ -56,9 +56,10 @@
       function trySpinningThatsAGoodTrick(){
             ['mouseover','mouseenter','pointerover','pointerenter','touchstart','focus'].forEach(eventType=>
                   document.querySelectorAll(
-                        `iframe:hover,iframe:active,iframe:focus,
-                        canvas:hover,canvas:active,canvas:focus,
-                        svg:hover,svg:active,svg:focus,
+                        `.card-wrapper:not([spinny],[hovered]),
+                        iframe:not([spinny],[hovered]),
+                        canvas:not([spinny],[hovered]),
+                        svg:not([spinny],[hovered]),
                         img:not([spinny],[hovered]),
                         i:not([spinny],[hovered]),
                         .elmentor-icon:not([spinny],[hovered])`
