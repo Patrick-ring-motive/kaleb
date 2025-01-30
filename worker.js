@@ -74,7 +74,7 @@ async function onRequest(request,env,ctx) {
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.js?${url?.searchParams?.get?.('cache')}"></script>
       <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/router.js?${url?.searchParams?.get?.('cache')}"></script>
-      <unscript src="/sw.js?${url?.searchParams?.get?.('cache')}"></unscript>
+      <script src="/sw.js?${url?.searchParams?.get?.('cache')}"></script>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.css?${url?.searchParams?.get?.('cache')}"></link>
       <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css?${url?.searchParams?.get?.('cache')}"></link>
       <link rel="icon" type="image/png" href="${url.origin}/favicon.png"></link>$1`)
