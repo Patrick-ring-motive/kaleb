@@ -1,9 +1,9 @@
+self?.importScripts?.(
+    `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js`,
+    `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js`
+  );
 (()=>{
   self.hostMap ??= {};
- /* self?.importScripts?.(
-    `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}`,
-    `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`
-  );*/
 
   const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
   const defaultHost = "calebhammer.com";
@@ -17,6 +17,7 @@
     return s;
   }
   (()=>{
+    if(!self.ServiceWorkerGlobalScope)return;
     const $fetch = Symbol('*fetch');
     const _fetch = self?.fetch??(_=>_);
     self[$fetch] = _fetch;
