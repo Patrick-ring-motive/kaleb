@@ -1,6 +1,6 @@
 (()=>{
   self.hostMap ??= {};
- /* self?.ServiceWorkerGlobalScope?.importScripts?.(
+ /* self?.importScripts?.(
     `https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}`,
     `https://api-git.kalebhammer.com/Patrick-ring-motive/profills/refs/heads/main/map-like.js?${new Date().getTime()}`
   );*/
@@ -18,9 +18,9 @@
   }
   (()=>{
     const $fetch = Symbol('*fetch');
-    const _fetch = self?.ServiceWorkerGlobalScope?.fetch??(_=>_);
-    (self?.ServiceWorkerGlobalScope??{})[$fetch] = _fetch;
-    (self?.ServiceWorkerGlobalScope??{}).fetch = Object.setPrototypeOf(async function fetch(url,options){
+    const _fetch = self?.fetch??(_=>_);
+    self[$fetch] = _fetch;
+    self.fetch = Object.setPrototypeOf(async function fetch(url,options){
       let response,request;
       try{
         request = new Request(...arguments);
@@ -57,11 +57,11 @@
 
   self?.navigator?.serviceWorker?.register?.(document?.currentScript?.src);
 
-  self?.ServiceWokerGlobalScope?.addEventListener?.('install',async (event) => event?.waitUntil?.(self?.skipWaiting?.()));
+  self?.addEventListener?.('install',async (event) => event?.waitUntil?.(self?.skipWaiting?.()));
 
-  self?.ServiceWokerGlobalScope?.addEventListener?.("activate", event => event?.waitUntil?.(clients?.claim?.()));
+  self?.addEventListener?.("activate", event => event?.waitUntil?.(clients?.claim?.()));
 
-  self?.ServiceWokerGlobalScope?.addEventListener?.('fetch', function onRequest(event){
+  self?.addEventListener?.('fetch', function onRequest(event){
          return event.respondWith(awaitUntil(event,fetch(event.request)));
   });
 
