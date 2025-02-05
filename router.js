@@ -32,7 +32,7 @@ debounceInterval(()=>document.querySelectorAll('a[href*="kaleb"i]:not([href*="ha
               response = await _fetch.call(this, request);
             }catch(e){
               response = new Response(e, {
-                status: 569,
+                status: 469,
                 statusText: e.message
               });
               console.warn(this,e,...arguments,request,response);
