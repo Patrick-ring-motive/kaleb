@@ -1,3 +1,5 @@
+globalThis.encode69 = x => btoa(x).replace(/./g,y=>y[`to${y>='a'?'Upper':'Lower'}Case`]());
+globalThis.decode69 = x => atob(x.replace(/./g,y=>y[`to${y>='a'?'Upper':'Lower'}Case`]()));
 globalThis. Q = fn =>{
     try{
 	  return fn();
