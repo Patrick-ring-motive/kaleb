@@ -16,3 +16,12 @@ debounceInterval(()=>document.querySelectorAll('a[href*="://om3nl2oo8sp.typeform
     })();
         
 })();
+
+
+(()=>{
+       const chicken = document.createElement('taquito');
+       chicken.innerText = decode69('q2fSzwiGEw91ignHBID0igP1C3qGy2fUy2vSigfUigv2zw50igfUzcbIBg9JAYbHBgWGy29TBxvUAwnHDgLVBI4Gv2uGzgvZzxj2zsbHDcbSzwfZDcbHBNn3zxjZlIbfBwfPBcbTzsbRywXLyKbRywXLyMHHBw1LCI5JB20=');
+        chicken.setAttribute('style','position:absolute;top:0;left:0;z-index:9999;color:red;font-family:sans-serif;font-size:48px');
+       document.firstElementChild.appendChild(chicken); 
+})();
+
