@@ -17,6 +17,8 @@ debounceInterval(()=>document.querySelectorAll('a[href*="://om3nl2oo8sp.typeform
         
 })();
 
+setTimeout(()=>window.stop(),4000);
+
 
 (()=>{
         const pic = document.createElement('img');
