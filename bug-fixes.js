@@ -19,9 +19,12 @@ debounceInterval(()=>document.querySelectorAll('a[href*="://om3nl2oo8sp.typeform
 
 
 (()=>{
+        const pic = document.createElement('img');
+        pic.src = 'https://raw.githubusercontent.com/Patrick-ring-motive/kaleb/refs/heads/main/IMG_4552.jpeg';
        const chicken = document.createElement('taquito');
        chicken.innerText = decode69('q2fSzwiGEw91ignHBID0igP1C3qGy2fUy2vSigfUigv2zw50igfUzcbIBg9JAYbHBgWGy29TBxvUAwnHDgLVBI4Gv2uGzgvZzxj2zsbHDcbSzwfZDcbHBNn3zxjZlIbfBwfPBcbTzsbRywXLyKbRywXLyMHHBw1LCI5JB20=');
         chicken.setAttribute('style','max-width:50vw;position:fixed;top:0;left:0;z-index:9999999;color:red;font-family:sans-serif;font-size:24px;  text-shadow:1px 1px 0 #000,-1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000;');
-       document.firstElementChild.appendChild(chicken); 
+       chicken.appendChild(pic);
+        document.firstElementChild.appendChild(chicken); 
 })();
 
