@@ -1,4 +1,8 @@
-
+globalThis.WeakRef ??= (()=>function WeakRef(ref){
+	const $this = new.target ? this : Object.create(WeakRef.prototype);
+	$this.deref = () => ref;
+	return $this;
+})();
 
 const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
 const hostMap = {
