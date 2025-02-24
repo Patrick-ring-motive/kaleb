@@ -179,8 +179,7 @@ const WeakRefMap = (()=>{
 const isValidResponse = x => (x?.status === 200 && !x?.bodyUsed && !x?.body?.locked) || x?.status === 304;
 const WeakCache = new WeakRefMap();
 globalThis.WeakCache = WeakCache;
-const $response = Symbol('*response');
-const $fetch = Symbol('*fetch');
+const $response = Symbol('response');
 globalThis.onRequest = async function onRequest(request,env,ctx){
   let response;
   try{
