@@ -121,7 +121,7 @@ globalThis.onRequest = async function(request,env,ctx){
         }
         console.log('response from cache');
       } else {
-        const presponse = globalThis.onReq(...arguments);
+        const presponse = globalThis.onReq(request,env,ctx);
         WeakCache.set(request.url,presponse);
         response = await presponse;
         if (response.status === 200 && !response.bodyUsed) {
@@ -132,7 +132,7 @@ globalThis.onRequest = async function(request,env,ctx){
       }
     }
     if(!instanceOf(response,Response)){
-     response = await globalThis.onReq(...arguments);
+     response = await globalThis.onReq(request,env,ctx);
     }
     return response;
   }catch(e){
