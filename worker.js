@@ -181,7 +181,7 @@ const WeakCache = new WeakRefMap();
 globalThis.WeakCache = WeakCache;
 const $response = Symbol('*response');
 const $fetch = Symbol('*fetch');
-const onRequest = async function onRequest(request,env,ctx){
+globalThis.onRequest = async function onRequest(request,env,ctx){
   let response;
   try{
     if (request?.method === 'GET'){
@@ -226,9 +226,3 @@ const onRequest = async function onRequest(request,env,ctx){
     });
   }
 };
-
-globalThis.onRequest = onRequest;
-
-//export default onRequest;
-
-
