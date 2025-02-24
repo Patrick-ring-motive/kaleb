@@ -227,8 +227,8 @@ const onRequest = async function onRequest(request,env,ctx){
   }
 };
 
+globalThis.onRequest = onRequest;
 
-
-export default onRequest;
+//export default onRequest;
 
 
