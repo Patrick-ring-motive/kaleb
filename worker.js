@@ -103,7 +103,7 @@ globalThis.onReq = async function onReq(request,env,ctx) {
     }
   }
   return cleanResponse(res);
-}
+};
 
 
 function deleteAndSet(res,key,value){
@@ -138,9 +138,9 @@ const instanceOf=(x,y) =>{
     return false;
   }
 };
-const WeakRefMap = (()=>{
+
   const $weakRefMap = Symbol('*weakRefMap');
-  return class WeakRefMap extends Map {
+ class WeakRefMap extends Map {
       constructor() {
         super();
         this[$weakRefMap] = new Map();
@@ -173,9 +173,9 @@ const WeakRefMap = (()=>{
         return true;
       }
     }
-  })();
 
-(()=>{
+
+
 const isValidResponse = x => (x?.status === 200 && !x?.bodyUsed && !x?.body?.locked) || x?.status === 304;
 const WeakCache = new WeakRefMap();
 globalThis.WeakCache = WeakCache;
@@ -225,4 +225,3 @@ globalThis.onRequest = async function onRequest(request,env,ctx){
     });
   }
 };
-})();
