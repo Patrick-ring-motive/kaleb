@@ -47,7 +47,7 @@ globalThis.instanceOf=(x,y) =>{
 };
 
 globalThis.$weakRefMap = Symbol('*weakRefMap');
- globalThis.WeakRefMap = (()=>class WeakRefMap extends Map {
+ globalThis.WeakRefMap = (()=>class WeakRefMap{
       constructor() {
         super();
         this[$weakRefMap] = new Map();
@@ -92,6 +92,7 @@ globalThis.isValidResponse = x => {
   }
   return false;
 };
+
 globalThis.WeakCache = new globalThis.WeakRefMap();
 const $response = Symbol('response');
 globalThis.onRequest = async function(request,env,ctx){
