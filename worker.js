@@ -30,7 +30,7 @@ function replaceResponseHosts(s){
 
 globalThis.WeakRef ??= (()=>function WeakRef(ref){
 	const $this = new.target ? this : Object.create(WeakRef.prototype);
-	$this.dereg = () => ref;
+	$this.deref = () => ref;
 	return $this;
 })();
 
