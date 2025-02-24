@@ -104,29 +104,6 @@ globalThis.onReq = async function onReq(request,env,ctx) {
 };
 
 
-function deleteAndSet(res,key,value){
-  res = new Response(res.body,Object.defineProperty(res,'headers',{
-      value:new Headers(res.headers)
-  }));
-  res.headers.delete(key);
-  res.headers.set(key,value);
-  return res;
-}
-
-function cleanResponse(response){       
-  response = deleteAndSet(response,'Access-Control-Allow-Origin','*');
-  response = deleteAndSet(response,'Access-Control-Allow-Methods','*');
-  response = deleteAndSet(response,'Access-Control-Allow-Headers','*');
-  response = deleteAndSet(response,'Access-Control-Allow-Credentials','true');
-  response = deleteAndSet(response,'Access-Control-Max-Age','86400');
-  response.headers.delete('Content-Security-Policy');
-  response.headers.delete('X-Frame-Options');
-  response.headers.delete('Strict-Transport-Security');
-  response.headers.delete('X-Content-Type-Options');
-  response.headers.delete('Cross-Origin-Embedder-Policy');
-return response;
-}
-
 
 
 const instanceOf=(x,y) =>{
@@ -223,4 +200,30 @@ globalThis.onReq.onRequest = async function(request,env,ctx){
     });
   }
 };
+
+
+  
+function deleteAndSet(res,key,value){
+  res = new Response(res.body,Object.defineProperty(res,'headers',{
+      value:new Headers(res.headers)
+  }));
+  res.headers.delete(key);
+  res.headers.set(key,value);
+  return res;
+}
+
+function cleanResponse(response){       
+  response = deleteAndSet(response,'Access-Control-Allow-Origin','*');
+  response = deleteAndSet(response,'Access-Control-Allow-Methods','*');
+  response = deleteAndSet(response,'Access-Control-Allow-Headers','*');
+  response = deleteAndSet(response,'Access-Control-Allow-Credentials','true');
+  response = deleteAndSet(response,'Access-Control-Max-Age','86400');
+  response.headers.delete('Content-Security-Policy');
+  response.headers.delete('X-Frame-Options');
+  response.headers.delete('Strict-Transport-Security');
+  response.headers.delete('X-Content-Type-Options');
+  response.headers.delete('Cross-Origin-Embedder-Policy');
+return response;
+}
+
 })();
