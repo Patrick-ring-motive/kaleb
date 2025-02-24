@@ -49,7 +49,6 @@ globalThis.instanceOf=(x,y) =>{
 globalThis.$weakRefMap = Symbol('*weakRefMap');
  globalThis.WeakRefMap = (()=>class WeakRefMap{
       constructor() {
-        super();
         this[$weakRefMap] = new Map();
       }
 
