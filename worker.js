@@ -83,7 +83,7 @@ globalThis.$weakRefMap = Symbol('*weakRefMap');
 
 
 
-globalThis.isValidResponse = x => ((x?.status === 200) && !(x?.bodyUsed) && !(x?.body?.locked)) || x?.status === 304;
+globalThis.isValidResponse = x => {return ((x?.status === 200) && !(x?.bodyUsed) && !(x?.body?.locked)) || x?.status === 304};
 globalThis.WeakCache = new WeakRefMap();
 const $response = Symbol('response');
 globalThis.onRequest = async function(request,env,ctx){
