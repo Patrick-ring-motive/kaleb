@@ -230,4 +230,4 @@ globalThis.onRequest = async function onRequest(request,env,ctx){
 })();
 
 
-export default onRequest;
+export default onRequest = globalThis.onRequest;
