@@ -1,3 +1,5 @@
+(()=>{
+
 const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
 const hostMap = {
   "kalebhammer.com":"calebhammer.com",
@@ -221,3 +223,4 @@ globalThis.onRequest = async function onRequest(request,env,ctx){
     });
   }
 };
+})();
