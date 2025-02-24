@@ -182,7 +182,12 @@ globalThis.onReq = async function onReq(request,env,ctx) {
       {headers:{'Content-Type':'text/javascript'}}
     );
   }
-  const url = new URL(request.url);
+  let url
+	  try{
+		  url = new URL(request.url);
+	  }catch{
+		  console.log(request);
+	  }
   if(!/api-git/i.test(request.url))url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
   const hostProxy = url.hostname;
   url.hostname = hostMap[url.hostname] ??= defaultHost;
