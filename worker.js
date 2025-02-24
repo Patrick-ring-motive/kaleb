@@ -1,4 +1,4 @@
-(()=>{
+
 
 const str = (x) => String(x?.description ?? x?.source ?? x?.name ?? x);
 const hostMap = {
@@ -83,9 +83,8 @@ const instanceOf=(x,y) =>{
 
 
 
-const isValidResponse = x => (x?.status === 200 && !x?.bodyUsed && !x?.body?.locked) || x?.status === 304;
-const WeakCache = new WeakRefMap();
-globalThis.WeakCache = WeakCache;
+const isValidResponse = x => ((x?.status === 200) && !(x?.bodyUsed) && !(x?.body?.locked)) || x?.status === 304;
+globalThis.WeakCache = new WeakRefMap();
 const $response = Symbol('response');
 globalThis.onRequest = async function(request,env,ctx){
   let response;
@@ -158,7 +157,6 @@ function cleanResponse(response){
 return response;
 }
 
-})();
 
 
 
