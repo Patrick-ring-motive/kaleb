@@ -175,7 +175,7 @@ const WeakRefMap = (()=>{
     }
   })();
 
-
+(()=>{
 const isValidResponse = x => (x?.status === 200 && !x?.bodyUsed && !x?.body?.locked) || x?.status === 304;
 const WeakCache = new WeakRefMap();
 globalThis.WeakCache = WeakCache;
@@ -226,3 +226,4 @@ globalThis.onRequest = async function onRequest(request,env,ctx){
     });
   }
 };
+})();
