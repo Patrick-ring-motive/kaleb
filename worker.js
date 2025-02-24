@@ -38,7 +38,7 @@ function replaceResponseHosts(s){
 
 
 
-const instanceOf=(x,y) =>{
+globalThis.instanceOf=(x,y) =>{
   try{
     return x instanceof y;
   }catch{
