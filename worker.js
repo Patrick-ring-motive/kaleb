@@ -28,7 +28,11 @@ function replaceResponseHosts(s){
   return s;
 }
 
-
+globalThis.WeakRef ??= (()=>function WeakRef(ref){
+	const $this = new.target ? this : Object.create(WeakRef.prototype);
+	$this.dereg = () => ref;
+	return $this;
+})();
 
 
 const defaultHost = "calebhammer.com";
