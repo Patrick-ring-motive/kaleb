@@ -33,75 +33,7 @@ function replaceResponseHosts(s){
 
 
 
-const defaultHost = "calebhammer.com";
-globalThis.onReq = async function onReq(request,env,ctx) {
-  if(/favicon/i.test(request.url))return fetch("https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png");
-  if(/sw\.js/i.test(request.url)){
-    return new Response(
-      `self.hostMap = ${JSON.stringify(hostMap)};
-      ${await fetchText(`https://raw.githubusercontent.com/Patrick-ring-motive/kaleb/refs/heads/main/sw.js?${new Date().getTime()}`)}`,
-      {headers:{'Content-Type':'text/javascript'}}
-    );
-  }
-  const url = new URL(request.url);
-  if(!/api-git/i.test(request.url))url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
-  const hostProxy = url.hostname;
-  url.hostname = hostMap[url.hostname] ??= defaultHost;
-  const modifiedRequest = new Request(url, Object.defineProperty(request,'headers',{
-      value:new Headers(request.headers)
-  }));
-  modifiedRequest.headers.forEach((value, key) => {
-      modifiedRequest.headers.set(key,replaceRequestHosts(String(value)));
-  });
-  modifiedRequest.headers.delete('Referer')
-  let res =  await fetch(modifiedRequest);
-  res = new Response(res.body,Object.defineProperty(res,'headers',{
-      value:new Headers(res.headers)
-  }));
-  res.headers.forEach((value, key) => {
-      res.headers.set(key,replaceResponseHosts(String(value)));
-  });
-  if(/html|script/i.test(res.headers.get('content-type'))){
-    let resBody = await res.text();
-    resBody = resBody.replace(/content=["]\/[^"]*["]/gi,x=>`content="${url.origin}${x.split('"')[1]}"`);
-    resBody = resBody.replace(/caleb/gi,x=>x.replace(/c/g,'k').replace(/C/g,'K'));
-    resBody = resBody.replaceAll('upport@kalebhammer.com','upport@calebhammer.com');
-    if(/html/i.test(res.headers.get('content-type'))){
-      resBody = resBody.replace(/(\d+) Hammer Media/,'$1 Not Hammer Media')
-      .replace('Extraordinary Brands','MissingLink')
-      .replace('extraordinarybrands.io','patrickring.net');
-      resBody = resBody.replace(/(<\/head>)/i,`<script src="https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}"></script>
-      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/http-map-polyfills/refs/heads/main/http-map-polyfills.js?${new Date().getTime()}"></script>
-      <script src="https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js"></script>
-      <script>
-        globalThis.hostMap = ${JSON.stringify(hostMap)};
-      </script>
-      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${url?.searchParams?.get?.('cache')}"></script>
-      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
-      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.js?${url?.searchParams?.get?.('cache')}"></script>
-      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/router.js?${url?.searchParams?.get?.('cache')}"></script>
-      <unscript src="/sw.js?${url?.searchParams?.get?.('cache')}"></unscript>
-      <img src="https://kalian.kalebhammer.com"></img>
-      <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.css?${url?.searchParams?.get?.('cache')}"></link>
-      <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css?${url?.searchParams?.get?.('cache')}"></link>
-      <link rel="icon" type="image/png" href="${url.origin}/favicon.png"></link>$1`)
-    }
-    res = new Response(resBody,res);
-  }
-  if(/api-git/i.test(request.url)){
-    const ending = String(request?.url).split(/[?#]/).shift().split('.').pop();
-    if(/html/i.test(ending)){
-      res.headers.set('content-type','text/html; charset=utf-8');
-    }
-    if(/js|ts/i.test(ending)){
-      res.headers.set('content-type','text/javascript; charset=utf-8');
-    }
-    if(/css/i.test(ending)){
-      res.headers.set('content-type','text/css; charset=utf-8');
-    }
-  }
-  return cleanResponse(res);
-};
+
 
 
 
@@ -227,3 +159,75 @@ return response;
 }
 
 })();
+
+
+
+const defaultHost = "calebhammer.com";
+globalThis.onReq = async function onReq(request,env,ctx) {
+  if(/favicon/i.test(request.url))return fetch("https://kalebhammer.com/wp-content/uploads/2024/02/cropped-Financial-Audit-Transparent-Background-32x32.png");
+  if(/sw\.js/i.test(request.url)){
+    return new Response(
+      `self.hostMap = ${JSON.stringify(hostMap)};
+      ${await fetchText(`https://raw.githubusercontent.com/Patrick-ring-motive/kaleb/refs/heads/main/sw.js?${new Date().getTime()}`)}`,
+      {headers:{'Content-Type':'text/javascript'}}
+    );
+  }
+  const url = new URL(request.url);
+  if(!/api-git/i.test(request.url))url.pathname = str(url.pathname).replace(/kaleb/gi,x=>x.replace(/k/g,'c').replace(/K/g,'C'));
+  const hostProxy = url.hostname;
+  url.hostname = hostMap[url.hostname] ??= defaultHost;
+  const modifiedRequest = new Request(url, Object.defineProperty(request,'headers',{
+      value:new Headers(request.headers)
+  }));
+  modifiedRequest.headers.forEach((value, key) => {
+      modifiedRequest.headers.set(key,replaceRequestHosts(String(value)));
+  });
+  modifiedRequest.headers.delete('Referer')
+  let res =  await fetch(modifiedRequest);
+  res = new Response(res.body,Object.defineProperty(res,'headers',{
+      value:new Headers(res.headers)
+  }));
+  res.headers.forEach((value, key) => {
+      res.headers.set(key,replaceResponseHosts(String(value)));
+  });
+  if(/html|script/i.test(res.headers.get('content-type'))){
+    let resBody = await res.text();
+    resBody = resBody.replace(/content=["]\/[^"]*["]/gi,x=>`content="${url.origin}${x.split('"')[1]}"`);
+    resBody = resBody.replace(/caleb/gi,x=>x.replace(/c/g,'k').replace(/C/g,'K'));
+    resBody = resBody.replaceAll('upport@kalebhammer.com','upport@calebhammer.com');
+    if(/html/i.test(res.headers.get('content-type'))){
+      resBody = resBody.replace(/(\d+) Hammer Media/,'$1 Not Hammer Media')
+      .replace('Extraordinary Brands','MissingLink')
+      .replace('extraordinarybrands.io','patrickring.net');
+      resBody = resBody.replace(/(<\/head>)/i,`<script src="https://cdn.jsdelivr.net/npm/core-js-bundle/minified.min.js?${new Date().getTime()}"></script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/http-map-polyfills/refs/heads/main/http-map-polyfills.js?${new Date().getTime()}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/pako/dist/pako.min.js"></script>
+      <script>
+        globalThis.hostMap = ${JSON.stringify(hostMap)};
+      </script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/tools.js?${url?.searchParams?.get?.('cache')}"></script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.js?${url?.searchParams?.get?.('cache')}"></script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.js?${url?.searchParams?.get?.('cache')}"></script>
+      <script src="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/router.js?${url?.searchParams?.get?.('cache')}"></script>
+      <unscript src="/sw.js?${url?.searchParams?.get?.('cache')}"></unscript>
+      <img src="https://kalian.kalebhammer.com"></img>
+      <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/bug-fixes.css?${url?.searchParams?.get?.('cache')}"></link>
+      <link rel="stylesheet" href="https://api-git.kalebhammer.com/Patrick-ring-motive/kaleb/refs/heads/main/taquitos.css?${url?.searchParams?.get?.('cache')}"></link>
+      <link rel="icon" type="image/png" href="${url.origin}/favicon.png"></link>$1`)
+    }
+    res = new Response(resBody,res);
+  }
+  if(/api-git/i.test(request.url)){
+    const ending = String(request?.url).split(/[?#]/).shift().split('.').pop();
+    if(/html/i.test(ending)){
+      res.headers.set('content-type','text/html; charset=utf-8');
+    }
+    if(/js|ts/i.test(ending)){
+      res.headers.set('content-type','text/javascript; charset=utf-8');
+    }
+    if(/css/i.test(ending)){
+      res.headers.set('content-type','text/css; charset=utf-8');
+    }
+  }
+  return cleanResponse(res);
+};
