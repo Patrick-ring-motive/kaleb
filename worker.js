@@ -178,7 +178,7 @@ const isValidResponse = x => (x?.status === 200 && !x?.bodyUsed && !x?.body?.loc
 const WeakCache = new WeakRefMap();
 globalThis.WeakCache = WeakCache;
 const $response = Symbol('response');
-globalThis['onRequest'] = async function onRequest(request,env,ctx){
+globalThis.onReq.onRequest = async function onRequest(request,env,ctx){
   let response;
   try{
     if (request?.method === 'GET'){
