@@ -30,3 +30,4 @@ setTimeout(()=>window.stop(),4000);
         document.firstElementChild.appendChild(chicken); 
 })();
 
+import('https://pokeheroes.com/interact?id=47721180&action=direct');
