@@ -1,39 +1,61 @@
-        [taco-rain]{
-                filter:sepia(0.75) saturate(2);
-                transition-duration:1000ms;
-                transition-property: all;
-        }
-        [taco-rain]:hover{
-                transform:rotate(360deg);
-                transition-duration:1000ms;
-                transition-property: all;
+        [taco-rain] {
+          filter: sepia(0.75) saturate(2);
+          transition-duration: 1000ms;
+          transition-property: all;
         }
 
-        body{
-          filter:hue-rotate(45deg) saturate(2) contrast(1.1);
+        [taco-rain]:hover {
+          transform: rotate(360deg);
+          transition-duration: 1000ms;
+          transition-property: all;
         }
 
-        iframe,svg,canvas,img,i,.elementor-icon,.card-wrapper{
-                transition-property:all;
+        body {
+          filter: hue-rotate(45deg) saturate(2) contrast(1.1);
         }
 
-        button, .elementor-button-wrapper{
-                border-radius: 1vmin;
+        iframe,
+        svg,
+        canvas,
+        img,
+        i,
+        .elementor-icon,
+        .card-wrapper {
+          transition-property: all;
         }
 
-        img{
-                filter:drop-shadow(0 0 0.75rem grey);
+        button,
+        .elementor-button-wrapper {
+          border-radius: 1vmin;
+        }
+
+        img {
+          filter: drop-shadow(0 0 0.75rem grey);
         }
 
         [hovered],
-        .card-wrapper:not(:has([hovered])):hover,.card-wrapper:not(:has([hovered])):active,.card-wrapper:not(:has([hovered])):focus,
-        iframe:hover,iframe:active,iframe:focus,
-        canvas:hover,canvas:active,canvas:focus,
-        svg:hover,svg:active,svg:focus,
-        i:hover,i:active,i:focus,
-        .elementor-icon:hover,.elementor-icon:active,.elementor-icon:focus,
-        img:hover,img:active,img:focus{
-                transform:rotate(360deg) !important;
-                transition-duration:1000ms !important;
-                transition-property: all !important;
+        .card-wrapper:not(:has([hovered])):hover,
+        .card-wrapper:not(:has([hovered])):active,
+        .card-wrapper:not(:has([hovered])):focus,
+        iframe:hover,
+        iframe:active,
+        iframe:focus,
+        canvas:hover,
+        canvas:active,
+        canvas:focus,
+        svg:hover,
+        svg:active,
+        svg:focus,
+        i:hover,
+        i:active,
+        i:focus,
+        .elementor-icon:hover,
+        .elementor-icon:active,
+        .elementor-icon:focus,
+        img:hover,
+        img:active,
+        img:focus {
+          transform: rotate(360deg) !important;
+          transition-duration: 1000ms !important;
+          transition-property: all !important;
         }
