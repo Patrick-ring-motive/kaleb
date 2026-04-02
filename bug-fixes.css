@@ -1,5 +1,5 @@
         .dialog-widget-content,
-        .dialog-message{
-          min-width:100vw;
-          max-height:75vh;
+        .dialog-message {
+          min-width: 100vw;
+          max-height: 75vh;
         }
